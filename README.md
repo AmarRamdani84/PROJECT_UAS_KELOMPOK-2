@@ -25,31 +25,29 @@ Repositori ini disusun dengan rapi agar mudah dipahami dan dinavigasi. Berikut a
 
 Proyek ini dikembangkan oleh tim yang solid dengan pembagian peran sebagai berikut:
 
-> **Catatan:** *Tugas di bawah ini dapat disesuaikan kembali dengan pekerjaan spesifik yang kalian lakukan di lapangan.*
-
 * 👑 **Ketua: Amar Ramdani**
-    * **Peran:** Project Manager / Lead Programmer
-    * **Fungsi:** Mengoordinasikan seluruh anggota, merancang arsitektur program utama, mengelola repositori GitHub, dan memastikan proyek selesai tepat waktu sesuai dengan soal UAS.
+    * **Peran:** [Isi peranmu di sini]
+    * **Fungsi:** [Isi fungsimu di sini]
 * 👤 **Anggota 01: Marsha Olivia**
-    * **Peran:** System Analyst / UI/UX
-    * **Fungsi:** Menganalisis kebutuhan sistem berdasarkan soal, merancang alur kerja pengguna, dan memastikan antarmuka/output program ramah pengguna (user-friendly).
+    * **Peran:** [Isi peran di sini]
+    * **Fungsi:** [Isi fungsi di sini]
 * 👤 **Anggota 02: Nizfa Salatri**
-    * **Peran:** Programmer / Developer
-    * **Fungsi:** Membantu penulisan *source code* di folder `code/`, mengimplementasikan struktur data, dan melakukan uji coba (debugging) pada modul program tertentu.
+    * **Peran:** [Isi peran di sini]
+    * **Fungsi:** [Isi fungsi di sini]
 * 👤 **Anggota 03: Arsyika Fadlika**
-    * **Peran:** Quality Assurance (QA) / Tester
-    * **Fungsi:** Menguji program secara menyeluruh untuk mencari *bug* atau *error*, serta memastikan program berjalan sesuai dengan kriteria penilaian UAS.
+    * **Peran:** [Isi peran di sini]
+    * **Fungsi:** [Isi fungsi di sini]
 * 👤 **Anggota 04: Raihan Sutan**
-    * **Peran:** Documentation Specialist
-    * **Fungsi:** Bertanggung jawab atas pembuatan laporan akhir, menyusun diagram alur, dan melengkapi file di dalam folder `document/`.
+    * **Peran:** [Isi peran di sini]
+    * **Fungsi:** [Isi fungsi di sini]
 * 👤 **Anggota 05: Faiz**
-    * **Peran:** Resource/Asset Manager
-    * **Fungsi:** Mengumpulkan data referensi, mengelola folder `assets/` dan `soal/`, serta merapikan format presentasi jika diperlukan.
+    * **Peran:** [Isi peran di sini]
+    * **Fungsi:** [Isi fungsi di sini]
 
 ---
 
 ## 🚀 Cara Menjalankan Proyek (Opsional)
 
 1. *Clone* repositori ini ke komputer lokal Anda:
-   ```bash
+```bash
    git clone [https://github.com/AmarRamdani84/nama-repositori.git](https://github.com/AmarRamdani84/nama-repositori.git)
