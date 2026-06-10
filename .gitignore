@@ -1,0 +1,18 @@
+# === Mengabaikan Hasil Compile C++ ===
+# Mengabaikan file executable (.exe di Windows, tanpa ekstensi di Mac/Linux)
+*.exe
+*.out
+*.app
+
+# === Mengabaikan Folder Konfigurasi Editor ===
+# Mengabaikan folder settingan otomatis dari VS Code / Dev-C++
+.vscode/
+.idea/
+*.layout
+*.win
+
+# === Mengabaikan File Temporary / Sampah ===
+# Mengabaikan file log atau simpanan otomatis sistem yang tidak penting
+*.log
+.DS_Store
+Thumbs.db
