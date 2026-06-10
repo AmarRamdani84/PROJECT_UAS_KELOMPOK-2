@@ -1,6 +1,6 @@
 # 🎓 Project UAS Kelas D
 
-[![Status](https://img.shields.io/badge/Status-Completed-success)](#)
+[![Status](https://img.shields.io/badge/Status-Proses-inProgres)](#)
 [![Course](https://img.shields.io/badge/Mata_Kuliah-Teknik_Informatika-blue)](#)
 [![University](https://img.shields.io/badge/Universitas-UNPER_Tasikmalaya-orange)](#)
 
