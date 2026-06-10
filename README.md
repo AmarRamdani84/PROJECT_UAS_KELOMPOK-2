@@ -1,4 +1,4 @@
-# 🎓 Project UAS Kelas D
+# 🎓 Project UAS Kelas D | Kelompok II
 
 [![Status](https://img.shields.io/badge/Status-Proses-inProgres)](#)
 [![Course](https://img.shields.io/badge/Mata_Kuliah-Teknik_Informatika-blue)](#)
