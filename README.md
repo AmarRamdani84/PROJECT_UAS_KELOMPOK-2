@@ -26,23 +26,23 @@ Repositori ini disusun dengan rapi agar mudah dipahami dan dinavigasi. Berikut a
 Proyek ini dikembangkan oleh tim yang solid dengan pembagian peran sebagai berikut:
 
 * 👑 **Ketua: Amar Ramdani**
-    * **Peran:** [Isi peranmu di sini]
-    * **Fungsi:** [Isi fungsimu di sini]
+    * **Peran:** Project Manager, GitHub Master & Code Reviewer
+    * **Fungsi:** Mengelola *repository*, mengatur perizinan *branch* utama (`main`), melakukan ulasan kode (*Code Review*) pada setiap *Pull Request* anggota, dan menggabungkan kode untuk memastikan tidak ada *error* atau *merge conflict*.
 * 👤 **Anggota 01: Marsha Olivia**
-    * **Peran:** [Isi peran di sini]
-    * **Fungsi:** [Isi fungsi di sini]
-* 👤 **Anggota 02: Nizfa Salatri**
-    * **Peran:** [Isi peran di sini]
-    * **Fungsi:** [Isi fungsi di sini]
+    * **Peran:** Main System, UI Console & Array
+    * **Fungsi:** Membuat kerangka utama program (`main.cpp`) dan menu navigasi. Mengelola *Array of Structs* untuk menampilkan daftar konser, harga, dan memotong sisa kursi.
+* 👤 **Anggota 02: Raihan Sutan**
+    * **Peran:** Struktur Data Linked List (Riwayat Transaksi)
+    * **Fungsi:** Menyimpan data setiap tiket yang berhasil dibayar ke dalam *Linked List*. Membuat fitur untuk menampilkan seluruh riwayat pembelian tiket yang telah sukses.
 * 👤 **Anggota 03: Arsyika Fadlika**
-    * **Peran:** [Isi peran di sini]
-    * **Fungsi:** [Isi fungsi di sini]
-* 👤 **Anggota 04: Raihan Sutan**
-    * **Peran:** [Isi peran di sini]
-    * **Fungsi:** [Isi fungsi di sini]
+    * **Peran:** Validasi & Sistem Pembayaran
+    * **Fungsi:** Membuat fungsi untuk menghitung total harga tiket, mengonfirmasi pembayaran, dan mengatur pesan validasi (*error handling*) jika kuota tiket habis saat diproses.
+* 👤 **Anggota 04: Nizfa Salatri**
+    * **Peran:** Struktur Data Queue (Antrean Pembelian)
+    * **Fungsi:** Membangun logika antrean menggunakan *Queue*. Mengelola fungsi `Enqueue` (pembeli masuk ke antrean pemesanan) dan `Dequeue` (memproses pembeli di antrean terdepan ke tahap pembayaran).
 * 👤 **Anggota 05: Faiz**
-    * **Peran:** [Isi peran di sini]
-    * **Fungsi:** [Isi fungsi di sini]
+    * **Peran:** Searching, Sorting & Dokumentasi
+    * **Fungsi:** Membuat algoritma pencarian (*Search*) ID Transaksi dan pengurutan (*Sort*) daftar konser. Bertanggung jawab menyusun laporan akhir dan mengelola aset presentasi proyek.
 
 ---
 
