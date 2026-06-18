@@ -31,16 +31,16 @@ Proyek ini dikembangkan oleh tim yang solid dengan pembagian peran sebagai berik
 * 👤 **Anggota 01: Marsha Olivia**
     * **Peran:** Main System, UI Console & Array
     * **Fungsi:** Membuat kerangka utama program (`main.cpp`) dan menu navigasi. Mengelola *Array of Structs* untuk menampilkan daftar konser, harga, dan memotong sisa kursi.
-* 👤 **Anggota 02: Raihan Sutan**
+* 👤 **Anggota 02: Faiz**
     * **Peran:** Struktur Data Linked List (Riwayat Transaksi)
     * **Fungsi:** Menyimpan data setiap tiket yang berhasil dibayar ke dalam *Linked List*. Membuat fitur untuk menampilkan seluruh riwayat pembelian tiket yang telah sukses.
-* 👤 **Anggota 03: Arsyika Fadlika**
+* 👤 **Anggota 03: Raihan Sutan**
     * **Peran:** Validasi & Sistem Pembayaran
     * **Fungsi:** Membuat fungsi untuk menghitung total harga tiket, mengonfirmasi pembayaran, dan mengatur pesan validasi (*error handling*) jika kuota tiket habis saat diproses.
 * 👤 **Anggota 04: Nizfa Salatri**
     * **Peran:** Struktur Data Queue (Antrean Pembelian)
     * **Fungsi:** Membangun logika antrean menggunakan *Queue*. Mengelola fungsi `Enqueue` (pembeli masuk ke antrean pemesanan) dan `Dequeue` (memproses pembeli di antrean terdepan ke tahap pembayaran).
-* 👤 **Anggota 05: Faiz**
+* 👤 **Anggota 05: Arsyika Fadlika**
     * **Peran:** Searching, Sorting & Dokumentasi
     * **Fungsi:** Membuat algoritma pencarian (*Search*) ID Transaksi dan pengurutan (*Sort*) daftar konser. Bertanggung jawab menyusun laporan akhir dan mengelola aset presentasi proyek.
 
