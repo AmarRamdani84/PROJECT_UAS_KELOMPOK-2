@@ -1,0 +1,218 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+// =========================================================================
+// BAGIAN MARSHA OLIVIA: Struktur Data & Array Global (Jadwal & Kuota)
+// =========================================================================
+struct Konser {
+    int id;
+    string namaKonser;
+    string tanggal; // Ditambahkan sesuai unsur "Jadwal" di soal
+    string waktu;   // Ditambahkan sesuai unsur "Jadwal" di soal
+    double harga;
+    int kuota;
+};
+
+const int MAX_KONSER = 3; 
+Konser daftarKonser[MAX_KONSER];
+
+void inisialisasiDummyData() {
+    daftarKonser[0] = {1, "Coldplay Live in Jakarta", "15 November 2026", "20:00 WIB", 1500000, 50};
+    daftarKonser[1] = {2, "NIKI Buzz World Tour", "05 Desember 2026", "19:00 WIB", 850000, 30};
+    daftarKonser[2] = {3, "Tulus Tur Manusia", "18 Januari 2027", "19:30 WIB", 500000, 5};
+}
+
+void lihatKonser() {
+    cout << "\n======================================================================\n";
+    cout << "                         DAFTAR JADWAL KONSER                         \n";
+    cout << "======================================================================\n";
+    cout << left << setw(4) << "ID" << setw(28) << "Nama Konser" << setw(18) << "Jadwal" << setw(14) << "Harga" << "Sisa Kuota" << endl;
+    cout << "----------------------------------------------------------------------\n";
+    
+    for (int i = 0; i < MAX_KONSER; i++) {
+        cout << left << setw(4) << daftarKonser[i].id 
+             << setw(28) << daftarKonser[i].namaKonser 
+             << setw(18) << daftarKonser[i].tanggal
+             << "Rp " << setw(11) << fixed << setprecision(0) << daftarKonser[i].harga 
+             << daftarKonser[i].kuota << " kursi" << endl;
+    }
+    cout << "======================================================================\n";
+}
+
+
+// =========================================================================
+// BAGIAN NIZFA SALATRI: Struktur Data Queue (Antrean Pembelian)
+// =========================================================================
+struct ElemenQueue {
+    string namaPembeli;
+    int idKonserDiincar;
+    int jumlahTiket;
+    ElemenQueue* next;
+};
+
+struct Queue {
+    ElemenQueue* front = nullptr;
+    ElemenQueue* rear = nullptr;
+} antreanSistem;
+
+// Penanda apakah antrean kosong
+bool isQueueEmpty() {
+    return antreanSistem.front == nullptr;
+}
+
+void masukAntrean() {
+    cout << "\n=========================================\n";
+    cout << "         MASUK ANTREAN PEMBELIAN         \n";
+    cout << "=========================================\n";
+    // NOTE UNTUK NIZFA: 
+    // 1. Input: Nama pembeli, ID konser yang ingin dibeli, dan jumlah tiket.
+    // 2. Buat node baru dari 'ElemenQueue'.
+    // 3. Lakukan fungsi Enqueue (tambahkan ke antreanSistem.rear).
+    cout << "[Fungsi Masuk Antrean belum diimplementasikan oleh Nizfa]\n";
+}
+
+
+// =========================================================================
+// BAGIAN FAIZ: Struktur Data Linked List (Riwayat Transaksi)
+// =========================================================================
+struct Transaksi {
+    int idTransaksi; // Penting untuk pencarian Arsyika
+    string namaPembeli;
+    string namaKonser;
+    int jumlahTiket;
+    double totalBayar;
+    Transaksi* next;
+};
+
+Transaksi* headRiwayat = nullptr; // Pointer utama riwayat transaksi
+int globalIdTransaksi = 1001;     // ID Transaksi otomatis mulai dari 1001
+
+void lihatRiwayat() {
+    cout << "\n======================================================================\n";
+    cout << "                        RIWAYAT TRANSAKSI SUKSES                      \n";
+    cout << "======================================================================\n";
+    // NOTE UNTUK FAIZ:
+    // 1. Lakukan traversal Linked List mulai dari 'headRiwayat'.
+    // 2. Jika 'headRiwayat == nullptr', cetak "Belum ada riwayat transaksi".
+    // 3. Tampilkan seluruh data simpul transaksi (ID, Nama, Konser, Jumlah, Total Bayar).
+    cout << "[Fungsi Lihat Riwayat belum diimplementasikan oleh Faiz]\n";
+}
+
+
+// =========================================================================
+// BAGIAN RAIHAN SUTAN: Validasi & Sistem Pembayaran (Kasir)
+// =========================================================================
+void prosesKasir() {
+    cout << "\n=========================================\n";
+    cout << "              PROSES KASIR               \n";
+    cout << "=========================================\n";
+    
+    if (isQueueEmpty()) {
+        cout << "Antrean kosong! Tidak ada pembeli yang bisa diproses.\n";
+        return;
+    }
+    
+    // NOTE UNTUK RAIHAN SUTAN:
+    // 1. Intip data terdepan antrean ('antreanSistem.front').
+    // 2. Validasi: Cek apakah 'idKonserDiincar' valid dan apakah 'kuota' di array cukup.
+    // 3. Jika kuota TIDAK cukup: Tampilkan pesan error, keluarkan dari antrean (Dequeue).
+    // 4. Jika kuota CUKUP:
+    //    - Hitung total harga = (harga tiket * jumlah tiket) + Pajak 10%.
+    //    - Kurangi kuota di Array 'daftarKonser'.
+    //    - Buat node 'Transaksi' baru, isi datanya (gunakan globalIdTransaksi++).
+    //    - Masukkan node transaksi tersebut ke Linked List milik Faiz ('headRiwayat').
+    //    - Keluarkan pembeli dari antrean (Dequeue).
+    cout << "[Fungsi Proses Kasir belum diimplementasikan oleh Raihan Sutan]\n";
+}
+
+
+// =========================================================================
+// BAGIAN ARSYIKA FADLIKA: Searching & Sorting
+// =========================================================================
+void menuSearchingSorting() {
+    int subPilihan;
+    cout << "\n=========================================\n";
+    cout << "         MENU SEARCHING & SORTING        \n";
+    cout << "=========================================\n";
+    cout << "1. Cari Transaksi Berdasarkan ID (Linear Search)\n";
+    cout << "2. Urutkan Konser Berdasarkan Harga (Sorting Array)\n";
+    cout << "3. Kembali ke Menu Utama\n";
+    cout << "-----------------------------------------\n";
+    cout << "Pilih sub-menu (1-3): ";
+    cin >> subPilihan;
+    
+    switch(subPilihan) {
+        case 1:
+            cout << "\n[Fitur Cari Transaksi - Bagian Arsyika]\n";
+            // NOTE: Cari ID Transaksi dengan menelusuri Linked List 'headRiwayat'.
+            break;
+        case 2:
+            cout << "\n[Fitur Urutkan Konser - Bagian Arsyika]\n";
+            // NOTE: Urutkan array 'daftarKonser' (misal: ascending/descending harga).
+            // Setelah di-sort, panggil fungsi lihatKonser() untuk melihat hasilnya.
+            break;
+        case 3:
+            return;
+        default:
+            cout << "Pilihan tidak valid!\n";
+    }
+}
+
+
+// =========================================================================
+// BAGIAN MARSHA OLIVIA: Main System & UI Console (Menu Navigasi Utama)
+// =========================================================================
+int main() {
+    inisialisasiDummyData();
+    int pilihan;
+    
+    do {
+        cout << "\n=========================================\n";
+        cout << "    SISTEM PEMESANAN TIKET KONSER CLI   \n";
+        cout << "=========================================\n";
+        cout << "1. Lihat Jadwal Konser (Array)\n";
+        cout << "2. Masuk Antrean Pembelian (Queue)\n";
+        cout << "3. Proses Kasir / Pembayaran (Validasi)\n";
+        cout << "4. Lihat Riwayat Transaksi (Linked List)\n";
+        cout << "5. Fitur Pencarian & Pengurutan (Search/Sort)\n"; // Ditambahkan agar pengerjaan Arsyika bisa diakses
+        cout << "6. Keluar\n";
+        cout << "-----------------------------------------\n";
+        cout << "Pilih menu (1-6): ";
+        cin >> pilihan;
+        
+        switch(pilihan) {
+            case 1:
+                lihatKonser();
+                break;
+            case 2:
+                masukAntrean();
+                break;
+            case 3:
+                prosesKasir();
+                break;
+            case 4:
+                lihatRiwayat();
+                break;
+            case 5:
+                menuSearchingSorting();
+                break;
+            case 6:
+                cout << "\nProgram SELESAI. Terima kasih!\n";
+                break;
+            default:
+                cout << "\nPilihan tidak valid! Silakan pilih menu 1-6.\n";
+        }
+        
+        if (pilihan != 6) {
+            cout << "\nTekan Enter untuk kembali ke MENU UTAMA...";
+            cin.ignore();
+            cin.get();
+        }
+        
+    } while (pilihan != 6);
+    
+    return 0;
+}
