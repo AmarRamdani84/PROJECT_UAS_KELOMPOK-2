@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <string>
 #include <iomanip>
 
@@ -67,13 +67,32 @@ void masukAntrean() {
     cout << "\n=========================================\n";
     cout << "         MASUK ANTREAN PEMBELIAN         \n";
     cout << "=========================================\n";
-    // NOTE UNTUK NIZFA: 
-    // 1. Input: Nama pembeli, ID konser yang ingin dibeli, dan jumlah tiket.
-    // 2. Buat node baru dari 'ElemenQueue'.
-    // 3. Lakukan fungsi Enqueue (tambahkan ke antreanSistem.rear).
-    cout << "[Fungsi Masuk Antrean belum diimplementasikan oleh Nizfa]\n";
-}
+    
+    string nama;
+    int idKonser, jumlah;
 
+    cout << "Masukkan Nama Pembeli   : ";
+    cin.ignore();
+    getline(cin, nama);
+    cout << "Masukkan ID Konser (1-3): ";
+    cin >> idKonser;
+    cout << "Masukkan Jumlah Tiket   : ";
+    cin >> jumlah;
+
+    ElemenQueue* nodeBaru = new ElemenQueue;
+    nodeBaru->namaPembeli = nama;
+    nodeBaru->idKonserDiincar = idKonser;
+    nodeBaru->jumlahTiket = jumlah;
+    nodeBaru->next = nullptr;
+
+    if (isQueueEmpty()) {
+        antreanSistem.front = nodeBaru;
+        antreanSistem.rear = nodeBaru;
+    } else {
+        antreanSistem.rear = nodeBaru; 
+    }
+    cout << "\n[Sukses] Sdr/i " << nama << " telah masuk ke dalam antrean!\n";
+}
 
 // =========================================================================
 // BAGIAN FAIZ: Struktur Data Linked List (Riwayat Transaksi)
