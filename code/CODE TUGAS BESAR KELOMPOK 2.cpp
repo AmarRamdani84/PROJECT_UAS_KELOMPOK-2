@@ -135,13 +135,23 @@ void lihatRiwayat() {
     cout << "\n======================================================================\n";
     cout << "                        RIWAYAT TRANSAKSI SUKSES                      \n";
     cout << "======================================================================\n";
-    // NOTE UNTUK FAIZ:
-    // 1. Lakukan traversal Linked List mulai dari 'headRiwayat'.
-    // 2. Jika 'headRiwayat == nullptr', cetak "Belum ada riwayat transaksi".
-    // 3. Tampilkan seluruh data simpul transaksi (ID, Nama, Konser, Jumlah, Total Bayar).
-    cout << "[Fungsi Lihat Riwayat belum diimplementasikan oleh Faiz]\n";
+    
+    if (headRiwayat == nullptr) {
+        cout << "Belum ada riwayat transaksi yang sukses.\n";
+    } else {
+        Transaksi* temp = headRiwayat;
+        cout << left << setw(10) << "ID" << setw(20) << "Nama Pembeli" << setw(30) << "Konser" << setw(10) << "Jumlah" << "Total Bayar\n";
+        cout << "----------------------------------------------------------------------\n";
+        while (temp != nullptr) {
+            cout << left << setw(10) << temp->idTransaksi
+                 << setw(20) << temp->namaPembeli
+                 << setw(30) << temp->namaKonser
+                 << setw(10) << temp->jumlahTiket
+                 << "Rp " << fixed << setprecision(0) << temp->totalBayar << endl;
+            temp = temp->next;
+        }
+    }
 }
-
 
 // =========================================================================
 // BAGIAN RAIHAN SUTAN: Validasi & Sistem Pembayaran (Kasir)
