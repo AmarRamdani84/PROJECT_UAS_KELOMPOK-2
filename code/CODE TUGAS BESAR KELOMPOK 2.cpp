@@ -110,6 +110,27 @@ struct Transaksi {
 Transaksi* headRiwayat = nullptr; // Pointer utama riwayat transaksi
 int globalIdTransaksi = 1001;     // ID Transaksi otomatis mulai dari 1001
 
+// Fungsi tambahan untuk menyimpan transaksi sukses (Insert Last)
+void tambahRiwayat(string nama, string konser, int jumlah, double total) {
+    Transaksi* nodeBaru = new Transaksi;
+    nodeBaru->idTransaksi = globalIdTransaksi++;
+    nodeBaru->namaPembeli = nama;
+    nodeBaru->namaKonser = konser;
+    nodeBaru->jumlahTiket = jumlah;
+    nodeBaru->totalBayar = total;
+    nodeBaru->next = nullptr;
+
+    if (headRiwayat == nullptr) {
+        headRiwayat = nodeBaru;
+    } else {
+        Transaksi* temp = headRiwayat;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        temp->next = nodeBaru;
+    }
+}
+
 void lihatRiwayat() {
     cout << "\n======================================================================\n";
     cout << "                        RIWAYAT TRANSAKSI SUKSES                      \n";
