@@ -156,7 +156,7 @@ void lihatRiwayat() {
 // =========================================================================
 // BAGIAN RAIHAN SUTAN: Validasi & Sistem Pembayaran (Kasir)
 // =========================================================================
-void prosesKasir() {
+ void prosesKasir() {
     cout << "\n=========================================\n";
     cout << "              PROSES KASIR               \n";
     cout << "=========================================\n";
@@ -165,20 +165,43 @@ void prosesKasir() {
         cout << "Antrean kosong! Tidak ada pembeli yang bisa diproses.\n";
         return;
     }
-    
-    // NOTE UNTUK RAIHAN SUTAN:
-    // 1. Intip data terdepan antrean ('antreanSistem.front').
-    // 2. Validasi: Cek apakah 'idKonserDiincar' valid dan apakah 'kuota' di array cukup.
-    // 3. Jika kuota TIDAK cukup: Tampilkan pesan error, keluarkan dari antrean (Dequeue).
-    // 4. Jika kuota CUKUP:
-    //    - Hitung total harga = (harga tiket * jumlah tiket) + Pajak 10%.
-    //    - Kurangi kuota di Array 'daftarKonser'.
-    //    - Buat node 'Transaksi' baru, isi datanya (gunakan globalIdTransaksi++).
-    //    - Masukkan node transaksi tersebut ke Linked List milik Faiz ('headRiwayat').
-    //    - Keluarkan pembeli dari antrean (Dequeue).
-    cout << "[Fungsi Proses Kasir belum diimplementasikan oleh Raihan Sutan]\n";
-}
 
+    // Intip data terdepan dari antrean
+    ElemenQueue* prosesNode = antreanSistem.front;
+    int idxKonser = prosesNode->idKonserDiincar - 1; // Index array adalah ID dikurang 1
+
+    // 1. Validasi: Apakah ID Konser ada?
+    if (idxKonser < 0 || idxKonser >= MAX_KONSER) {
+        cout << "[Gagal] ID Konser tidak valid. Pembeli dibatalkan.\n";
+    }
+    // 2. Validasi: Apakah kuota cukup?
+    else if (daftarKonser[idxKonser].kuota < prosesNode->jumlahTiket) {
+        cout << "[Gagal] Kuota tidak cukup untuk pesanan Sdr/i " << prosesNode->namaPembeli 
+             << ". Sisa kuota: " << daftarKonser[idxKonser].kuota << " kursi.\n";
+    } 
+    // 3. Eksekusi Pembayaran Sukses
+    else {
+        double pajak = 0.10; // Pajak 10%
+        double hargaTiket = daftarKonser[idxKonser].harga * prosesNode->jumlahTiket;
+        double totalAkhir = hargaTiket + (hargaTiket * pajak);
+
+        // Kurangi kuota di array
+        daftarKonser[idxKonser].kuota -= prosesNode->jumlahTiket;
+
+        // Simpan ke Linked List (memanggil fungsi buatan Faiz)
+        tambahRiwayat(prosesNode->namaPembeli, daftarKonser[idxKonser].namaKonser, prosesNode->jumlahTiket, totalAkhir);
+
+        cout << "[Sukses] Pembayaran atas nama " << prosesNode->namaPembeli << " berhasil diproses!\n";
+        cout << "Total Bayar (termasuk pajak 10%): Rp " << fixed << setprecision(0) << totalAkhir << endl;
+    }
+
+    // Dequeue: Keluarkan pembeli yang sudah diproses dari antrean
+    antreanSistem.front = antreanSistem.front->next;
+    if (antreanSistem.front == nullptr) {
+        antreanSistem.rear = nullptr; // Reset rear jika antrean jadi kosong
+    }
+    delete prosesNode; // Bersihkan memori
+}
 
 // =========================================================================
 // BAGIAN ARSYIKA FADLIKA: Searching & Sorting
