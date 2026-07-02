@@ -89,7 +89,7 @@ void masukAntrean() {
         antreanSistem.front = nodeBaru;
         antreanSistem.rear = nodeBaru;
     } else {
-        antreanSistem.rear = nodeBaru;
+        antreanSistem.rear->next = nodeBaru; // FIXE BUG NIZFA
         antreanSistem.rear = nodeBaru; 
     }
     cout << "\n[Sukses] Sdr/i " << nama << " telah masuk ke dalam antrean!\n";
