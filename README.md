@@ -1,4 +1,4 @@
-# 🎓 Project UAS Kelas D | Kelompok II
+# 🎓 Project UAS Kelas D | Kelompok II | Study Kasus 07 Sistem Pemesanan Tiket Konser 
 
 [![Status](https://img.shields.io/badge/Status-Proses-inProgres)](#)
 [![Course](https://img.shields.io/badge/Mata_Kuliah-Teknik_Informatika-blue)](#)
